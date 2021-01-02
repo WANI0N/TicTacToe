@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<script language="JavaScript" type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>  
+  
+<link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Tic Tac Toe!</title>
+</head>
+
+<body>
+    <div class="navbar" >
+        <a title="Player vs Computer (easy)" id="PvC1">Computer (easy)</a>
+        <a title="Player vs Computer (hard)" id="PvC2">Computer (hard)</a>
+        <a title="Player vs Player" id="PvP">Player vs Player</a>
+        <a title="Restart game" id="Restart">Restart</a>
+        <a title="Sound" id="Sound" >🔊</a>
+        <div class="dropdown">
+        
+        <button class="dropbtn" id="dropbt_id">New Game
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a title="grid 3x3; 3 in a row to win" id="startGame3x3" >3x3 row 3</a>
+          <a title="grid 4x4; 4 in a row to win" id="startGame4x4" >4x4 row 4</a>
+          <a title="grid 5x5; 4 in a row to win" id="startGame5x4" >5x5 row 4</a>
+          <a title="grid 12x12; 5 in a row to win" id="startGame12x5" >12x12 row 5</a>
+          <a title="grid 20x20; 5 in a row to win" id="startGame20x5" >20x20 row 5</a>
+          <a title="grid 30x30; 6 in a row to win" id="startGame30x6" >30x30 row 6</a>
+        </div>
+        
+        </div>
+      
+      </div>
+</body>
+
+<canvas id="gc" width="800" height="800" ></canvas>
+<script language="JavaScript" type="module" src="game.js"></script>
+
+</html>
