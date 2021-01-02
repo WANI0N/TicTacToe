@@ -216,7 +216,6 @@ document.getElementById("gc").onclick = function(){
 }
 
 document.getElementById("Restart").onclick = function(){
-    drawUselessLine();
     startGame(gridSize,rowLength)
 }
 

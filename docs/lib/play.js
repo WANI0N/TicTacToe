@@ -18,6 +18,10 @@ export class play{
         } else {
             esCount = 2;
         }
+        // exception - go center move on 3x3 grid if not yet played
+        if (grid.calGridSize(gridData) == 3 && grid.getStateCount(oponentSign,gridData) == 1 && gridData["1_1"]["state"] == 0){
+            return {x:gridData["1_1"]["gridX"],y:gridData["1_1"]["gridY"]};
+        }
         //calculating top row +2 empty (doesn't add 2 empty in a row)
         let oponentTopRowData = grid.getTopRow(oponentSign,gridData,esCount);
         let findOponentWin = grid.getTopRow(oponentSign,gridData,1);
@@ -80,8 +84,16 @@ export class play{
         if (myTopRowData[myTopRowData.length-1]["state"] == 0){
             return {x:myTopRowData[myTopRowData.length-1]["gridX"],y:myTopRowData[myTopRowData.length-1]["gridY"]};
         }
-        //if move not found, go random
+        //if move not found, go random for top empty row
         let avalRow = grid.getTopRow(0,gridData);
+        if (avalRow.length == 0){
+            for (const property in gridData) {
+                if (gridData[property]["state"] == 0){
+                    return {x:gridData[property]["gridX"],y:gridData[property]["gridY"]};
+                }
+            }
+        }
+        
         var r = Math.floor(Math.random() * avalRow.length);
         return {x:avalRow[r]["gridX"],y:avalRow[r]["gridY"]};
         
