@@ -100,7 +100,9 @@ function playSound(gameMod){
 }
 
 function executeTurn(currentTurnSubmit,key,r = 0){
+    
     if (gameState == 0){
+        drawUselessLine();
         return
     }
     playSound(gameMod)
@@ -131,7 +133,7 @@ function executeTurn(currentTurnSubmit,key,r = 0){
     }
     // checking draw
     if (grid.getStateCount(0,gridData) == 0){
-        console.log("Draw!")
+        //console.log("Draw!")
         gameState = 0;
         drawUselessLine();
         return
