@@ -24,7 +24,7 @@ let gridData = {};
 var currentTurn = 1;
 let gameState;
 let gameMod
-setGameMod(1)
+setGameMod(2)
 
 //loading images
 var board = new Image();
